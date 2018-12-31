@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api/hero', require('./api/heroRoutes.js'));
 app.use('/api/team', require('./api/teamRoutes.js'));
 app.use('/api/universe', require('./api/universeRoutes.js'));
-// app.use('/api', require('./api')); // include our routes!
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
