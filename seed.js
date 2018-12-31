@@ -1,5 +1,5 @@
 const db = require('./server/db/database.js');
-const { Hero, Team, Universe } = require('./server/db/index.js');
+const { Hero, Team, Universe } = require('./server/db/associations.js');
 
 const { green, red } = require('chalk');
 

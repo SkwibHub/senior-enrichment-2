@@ -1,7 +1,7 @@
 'use strict';
 
 const router = require('express').Router();
-const { Hero, Team, Universe } = require('../db/index.js');
+const { Hero, Team, Universe } = require('../db/associations.js');
 
 // Your routes go here!
 
