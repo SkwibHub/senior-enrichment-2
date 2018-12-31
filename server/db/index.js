@@ -22,7 +22,9 @@ const Universe = require('./Universe.js');
 Hero.belongsTo(Team);
 Hero.belongsTo(Universe);
 Team.hasMany(Hero);
+Team.belongsTo(Universe);
 Universe.hasMany(Hero);
+Universe.hasMany(Team);
 
 console.log('Set associations');
 
