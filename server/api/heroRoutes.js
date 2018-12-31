@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//GET: Retrieve one hero listing w/ team
+//GET: Retrieve one hero listing w/ team & universe
 router.get('/:id', async (req, res) => {
   try {
     const thisHero = await Hero.findOne({
@@ -31,9 +31,16 @@ router.get('/:id', async (req, res) => {
       }
     });
 
+    const thisUniverse = await Universe.findOne({
+      where: {
+        universeName: thisHero.universeName
+      }
+    });
+
     const sendHero = {
       TeamKey: thisTeam,
-      HeroKey: thisHero
+      HeroKey: thisHero,
+      universeKey: thisUniverse
     };
 
     console.log(JSON.stringify(thisHero.teamName));

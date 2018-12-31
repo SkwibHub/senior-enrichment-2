@@ -5,23 +5,23 @@ const { Hero, Team, Universe } = require('../db/associations.js');
 
 // Your routes go here!
 
-//GET: Retrieve all team listings
+//GET: Retrieve all universe listings
 router.get('/', async (req, res) => {
   try {
-    const allTeams = await Team.findAll();
-    console.log('Getting team data from DB');
-    res.json(allTeams);
+    const allUniverses = await Universe.findAll();
+    console.log('Getting Universe data from DB');
+    res.json(allUniverses);
   } catch (err) {
     console.error(err);
   }
 });
 
-//GET: Retrieve one team listings w/ heroes & universe
+//GET: Retrieve one universe listing w/ heroes & teams
 router.get('/:id', async (req, res) => {
   try {
-    console.log('Getting single team plus hero data from DB');
+    console.log('Getting single universe plus hero data from DB');
 
-    const thisTeam = await Team.findOne({
+    const thisUniverse = await Universe.findOne({
       where: {
         id: parseInt(req.params.id)
       }
@@ -29,25 +29,25 @@ router.get('/:id', async (req, res) => {
 
     const chosenHeroes = await Hero.findAll({
       where: {
-        teamName: thisTeam.teamName
+        universeName: thisUniverse.universeName
       },
-      include: [Team]
+      include: [Universe]
     });
 
-    const chosenUniverse = await Universe.findAll({
+    const chosenTeams = await Team.findAll({
       where: {
-        universeName: thisTeam.universeName
+        universeName: thisUniverse.universeName
       },
-      include: [Team]
+      include: [Universe]
     });
 
-    const sendTeam = {
-      teamKey: thisTeam,
+    const sendUniverse = {
+      universeKey: thisUniverse,
       heroKey: chosenHeroes,
-      universeKey: chosenUniverse
+      teamKey: chosenTeams
     };
 
-    res.json(sendTeam);
+    res.json(sendUniverse);
   } catch (err) {
     console.error(err);
   }
