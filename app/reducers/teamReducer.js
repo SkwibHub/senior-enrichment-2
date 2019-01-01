@@ -1,4 +1,5 @@
 import axios from 'axios';
+import listSorter from './listSorter';
 
 // action types
 const GET_TEAM_LIST = 'GET_TEAM_LIST';
@@ -9,25 +10,11 @@ const getTeamList = teamList => ({
   teamList
 });
 
-// teamName sort function
-const teamNameSorter = teamArray => {
-  for (let i = 0; i < teamArray.length - 1; i++) {
-    for (let j = i; j < teamArray.length - 1; j++) {
-      if (teamArray[j].teamName > teamArray[j + 1].teamName) {
-        let temp = teamArray[j];
-        teamArray[j] = teamArray[j + 1];
-        teamArray[j + 1] = temp;
-      }
-    }
-  }
-  return teamArray;
-};
-
 // thunk creators
 export const teamThunk = () => {
   return async dispatch => {
     let tempResponse = await axios.get('/api/team');
-    let response = teamNameSorter(tempResponse.data);
+    let response = listSorter(tempResponse.data, 'teamName');
     const action = getTeamList(response);
     dispatch(action);
   };

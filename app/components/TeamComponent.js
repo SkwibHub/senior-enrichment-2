@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TeamInputFormComponent from './TeamInputFormComponent.js';
 
 class TeamComponent extends Component {
   constructor(props) {
@@ -17,31 +18,37 @@ class TeamComponent extends Component {
   render() {
     return (
       <div>
-        <div className='teamComponent'>
+        <div className="teamComponent">
           <br />
-          <h1 className='component-header'>SUPER TEAMS</h1>
+          <h1 className="component-header">SUPER TEAMS</h1>
           {this.props.team.map((team, index) => (
-            <div className='teamContainer'>
+            <div className="teamContainer">
               <div>
-                <img src={`images/${team.teamURL}`} className='bigLogo' />
+                <img src={`images/${team.teamURL}`} className="bigLogo" />
               </div>
               <div>
                 <Link
                   to={`/team/${team.id}`}
                   key={index}
-                  className='teamLinkName'
+                  className="teamLinkName"
                 >
                   {`  ${team.teamName}`}
                 </Link>
               </div>
               <div>
-                <img src={`images/${team.universeURL}`} className='smallLogo' />
+                <img src={`images/${team.universeURL}`} className="smallLogo" />
               </div>
             </div>
           ))}
         </div>
-        <div className='formComponent'>
-          <h4>FORM HERE</h4>
+        <div className="formComponent">
+          <h1 className="component-header">NEW TEAM FORM</h1>
+          <div>
+            <TeamInputFormComponent />
+          </div>
+          <div>
+            <img src="images/unaffiliated.png" className="formImage" />
+          </div>
         </div>
       </div>
     );

@@ -113,7 +113,7 @@ hr {
   padding: 5px;
   margin: 5px;
   width: 15vw;
-  height: 50vh;
+  height: 45vh;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
@@ -146,12 +146,31 @@ hr {
 }
 
 .formComponent {
-  width: 35vw;
-  margin-top: 10vh;
+  width: 33vw;
+  margin-top: 1vh;
   display: inline-block;
   vertical-align: top;
-  padding: 0px;
+  padding: 2vh;
   text-align: left;
   float: left;
-  background: rgba(32, 13, 100, 0.3);
+  background: rgba(32, 13, 100, 0);
+}
+
+.labelClass {
+  font: 2vh 'Changa One';
+  color: #060b4b;
+  text-decoration: none;
+  width: 33vw;
+  float: top;
+}
+
+.formField {
+  font: 3vh 'Changa One';
+  color: #060b4b;
+  text-decoration: none;
+  width: 32vw;
+}
+
+.formImage {
+  width: 30vw;
 }
