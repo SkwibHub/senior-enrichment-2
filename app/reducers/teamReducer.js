@@ -20,6 +20,17 @@ export const teamThunk = () => {
   };
 };
 
+export const addNewTeamThunk = team => {
+  return async dispatch => {
+    console.log('DURING THUNK', team);
+    await axios.post(`api/team/add`, team);
+    let tempResponse = await axios.get('/api/team');
+    let response = listSorter(tempResponse.data, 'teamName');
+    const action = getTeamList(response);
+    dispatch(action);
+  };
+};
+
 // reducer
 const initialState = [];
 

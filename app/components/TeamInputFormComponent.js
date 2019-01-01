@@ -4,6 +4,10 @@ class TeamInputFormComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      teamName: '',
+      teamURL: '',
+      universeName: '',
+      universeURL: '',
       loading: true
     };
     this.handleChange = this.handleChange.bind(this);
@@ -17,6 +21,19 @@ class TeamInputFormComponent extends Component {
     console.log('PROPS UNIVERSE', this.props.universe[0].universeName); //-------------
   }
 
+  URLassign(team, universe) {
+    const filteredTeam = universe.filter(u =>
+      u.universeName === team.universeName ? true : false
+    );
+    const revisedTeam = Object.assign({}, team, {
+      universeURL: filteredTeam[0].universeURL
+    });
+    if (revisedTeam.teamURL === '') {
+      revisedTeam.teamURL = 'unaffiliated.png';
+    }
+    return revisedTeam;
+  }
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -25,7 +42,8 @@ class TeamInputFormComponent extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    // await this.props.enterNewTeam(this.state);
+    const assignedState = this.URLassign(this.state, this.props.universe);
+    await this.props.insertTeamData(assignedState);
 
     this.setState({
       teamName: '',
@@ -38,7 +56,6 @@ class TeamInputFormComponent extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <br />
-        <h4>TEST</h4>
         <label>
           <span className='labelClass'>Team Name:</span>
           <br />
@@ -74,9 +91,14 @@ class TeamInputFormComponent extends Component {
             className='formField'
             onChange={this.handleChange}
             value={this.state.universeName}
+            required
+            aria-required='true'
           >
+            <option value=''>Select a Universe</option>
             {this.props.universe.map(u => (
-              <option key={u.id}>{u.universeName}</option>
+              <option key={u.id} value={u.universeName}>
+                {u.universeName}
+              </option>
             ))}
           </select>
         </label>

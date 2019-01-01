@@ -53,6 +53,7 @@ class TeamComponent extends Component {
           <h1 className='component-header'>NEW TEAM FORM</h1>
           <div>
             <TeamInputFormComponent
+              insertTeamData={this.props.insertTeamData}
               retrieveUniverseData={this.props.retrieveUniverseData}
               universe={this.props.universe}
             />

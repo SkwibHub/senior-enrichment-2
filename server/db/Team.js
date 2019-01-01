@@ -19,8 +19,7 @@ const Team = db.define('team', {
   },
   universeName: {
     type: Sequelize.STRING,
-    allowNull: false,
-    defaultValue: ''
+    allowNull: false
   }
 });
 

@@ -53,6 +53,17 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//POST: Add a team listing to DB
+router.post('/add', async (req, res) => {
+  try {
+    const newTeam = await Team.create(req.body);
+    console.log('Adding team data to DB');
+    res.json({ message: 'New team added', article: newTeam });
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;
