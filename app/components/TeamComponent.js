@@ -18,14 +18,19 @@ class TeamComponent extends Component {
     return (
       <div>
         <div className='teamComponent'>
-          <h1>Super Teams</h1>
+          <br />
+          <h1 className='component-header'>SUPER TEAMS</h1>
           {this.props.team.map((team, index) => (
             <div className='teamContainer'>
               <div>
                 <img src={`images/${team.teamURL}`} className='bigLogo' />
               </div>
               <div>
-                <Link to={`/team/${team.id}`} key={index}>
+                <Link
+                  to={`/team/${team.id}`}
+                  key={index}
+                  className='teamLinkName'
+                >
                   {`  ${team.teamName}`}
                 </Link>
               </div>
@@ -34,6 +39,9 @@ class TeamComponent extends Component {
               </div>
             </div>
           ))}
+        </div>
+        <div className='formComponent'>
+          <h4>FORM HERE</h4>
         </div>
       </div>
     );

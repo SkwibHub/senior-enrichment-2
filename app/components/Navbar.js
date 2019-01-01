@@ -3,11 +3,22 @@ import { Link } from 'react-router-dom';
 
 const Navbar = props => {
   return (
-    <div id='navbar'>
-      <Link to='/team'>TEAMS</Link>
+    <div>
+      <Link to='/team' className='navButtonLeft'>
+        TEAMS
+      </Link>
+      <Link to='/team' className='navButtonLeft'>
+        HEROES
+      </Link>
       <span>
-        <h1>SUPER HEROES</h1>
+        <h1 className='superhero-header'>SUPER HEROES</h1>
       </span>
+      <Link to='/team' className='navButtonRight'>
+        UNIVERSES
+      </Link>
+      <Link to='/team' className='navButtonRight'>
+        LOGOUT
+      </Link>
     </div>
   );
 };

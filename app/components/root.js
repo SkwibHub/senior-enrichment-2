@@ -10,8 +10,9 @@ const Root = () => {
         <Navbar />
       </nav>
       <main>
-        <h1>Welcome to a world of super heroes!!</h1>
-        <hr />
+        <h1 className='superhero-subheader'>
+          Welcome to a world of super heroes!!
+        </h1>
         <Switch>
           <Route exact path='/' component={Team} />
           <Route exact path='/team' component={Team} />
