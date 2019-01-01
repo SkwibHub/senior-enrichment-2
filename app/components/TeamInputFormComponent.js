@@ -12,9 +12,11 @@ class TeamInputFormComponent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /*
   async componentDidMount() {
-    await this.props.retrieveSingleTeam();
+    await this.props.retrieveUniverses();
   }
+*/
 
   handleChange(event) {
     this.setState({
@@ -66,13 +68,16 @@ class TeamInputFormComponent extends Component {
         <label>
           <span className="labelClass">Universe:</span>
           <br />
-          <input
+          <select
             type="text"
             name="universeName"
             className="formField"
             onChange={this.handleChange}
             value={this.state.universeName}
-          />
+          >
+            <option>Marvel</option>
+            <option>DC</option>
+          </select>
         </label>
         <br />
         <br />
