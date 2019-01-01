@@ -18,36 +18,47 @@ class TeamComponent extends Component {
   render() {
     return (
       <div>
-        <div className="teamComponent">
+        <div className='teamComponent'>
           <br />
-          <h1 className="component-header">SUPER TEAMS</h1>
-          {this.props.team.map((team, index) => (
-            <div className="teamContainer">
+          <h1 className='component-header'>SUPER TEAMS</h1>
+          {this.props.team.map(t => (
+            <div className='teamContainer'>
               <div>
-                <img src={`images/${team.teamURL}`} className="bigLogo" />
+                <img
+                  src={`images/${t.teamURL}`}
+                  key={'teamimage' + t.id}
+                  className='bigLogo'
+                />
               </div>
               <div>
                 <Link
-                  to={`/team/${team.id}`}
-                  key={index}
-                  className="teamLinkName"
+                  to={`/team/${t.id}`}
+                  key={'name' + t.id}
+                  className='teamLinkName'
                 >
-                  {`  ${team.teamName}`}
+                  {`  ${t.teamName}`}
                 </Link>
               </div>
               <div>
-                <img src={`images/${team.universeURL}`} className="smallLogo" />
+                <img
+                  src={`images/${t.universeURL}`}
+                  key={'img' + t.id}
+                  className='smallLogo'
+                />
               </div>
             </div>
           ))}
         </div>
-        <div className="formComponent">
-          <h1 className="component-header">NEW TEAM FORM</h1>
+        <div className='formComponent'>
+          <h1 className='component-header'>NEW TEAM FORM</h1>
           <div>
-            <TeamInputFormComponent />
+            <TeamInputFormComponent
+              retrieveUniverseData={this.props.retrieveUniverseData}
+              universe={this.props.universe}
+            />
           </div>
           <div>
-            <img src="images/unaffiliated.png" className="formImage" />
+            <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
       </div>
