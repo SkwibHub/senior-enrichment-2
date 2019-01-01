@@ -10,12 +10,12 @@ const Team = db.define('team', {
   teamURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    imageURL: 'defaultteam.png'
+    imageURL: 'unaffiliated.png'
   },
   universeURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    imageURL: 'defaultuniverse.jpg'
+    imageURL: 'unaffiliated.png'
   },
   universeName: {
     type: Sequelize.STRING,

@@ -10,38 +10,38 @@ db.sync({ force: true })
     return Promise.all([
       Team.create({
         teamName: 'Avengers',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'avengers-logo.png',
+        universeURL: 'marveluniverse.png',
         universeName: 'Marvel'
       }),
       Team.create({
         teamName: 'X-Men',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'xmenteam.png',
+        universeURL: 'marveluniverse.png',
         universeName: 'Marvel'
       }),
       Team.create({
         teamName: 'Fantastic Four',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'fant4-logo.png',
+        universeURL: 'marveluniverse.png',
         universeName: 'Marvel'
       }),
       Team.create({
         teamName: 'Unaffiliated',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'unaffiliated.png',
+        universeURL: 'marveluniverse.png',
         universeName: 'Marvel'
       }),
       Team.create({
         teamName: 'Justice League',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'JL-logo.png',
+        universeURL: 'DC-universe.png',
         universeName: 'DC'
       }),
       Team.create({
         teamName: 'Suicide Squad',
-        teamURL: 'defaultteam.png',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'suicide-squad.png',
+        universeURL: 'DC-universe.png',
         universeName: 'DC'
       })
     ]);
@@ -53,8 +53,8 @@ db.sync({ force: true })
         name: 'Steve Rogers',
         email: 'steverogers@avengers.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'avengers-logo.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'Avengers',
         universeName: 'Marvel'
       }),
@@ -63,8 +63,8 @@ db.sync({ force: true })
         name: 'Tony Stark',
         email: 'tonystark@avengers.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'avengers-logo.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'Avengers',
         universeName: 'Marvel'
       }),
@@ -73,8 +73,8 @@ db.sync({ force: true })
         name: 'Odinson',
         email: 'thor@avengers.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'avengers-logo.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'Avengers',
         universeName: 'Marvel'
       }),
@@ -83,8 +83,8 @@ db.sync({ force: true })
         name: 'Peter Parker',
         email: 'peterparker@avengers.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'avengers-logo.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'Avengers',
         universeName: 'Marvel'
       }),
@@ -93,8 +93,8 @@ db.sync({ force: true })
         name: 'Scott Summers',
         email: 'scottsummers@xmen.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'xmenteam.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'X-Men',
         universeName: 'Marvel'
       }),
@@ -103,8 +103,8 @@ db.sync({ force: true })
         name: 'Charles Xavier',
         email: 'charlesxavier@xmen.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'xmenteam.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'X-Men',
         universeName: 'Marvel'
       }),
@@ -113,8 +113,8 @@ db.sync({ force: true })
         name: 'Ben Grimm',
         email: 'thing@fantasticfour.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'fant4-logo.png',
+        universeURL: 'marveluniverse.png',
         teamName: 'Fantastic Four',
         universeName: 'Marvel'
       }),
@@ -123,8 +123,8 @@ db.sync({ force: true })
         name: 'Clark Kent',
         email: 'clarkkent@justiceleague.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'JL-logo.png',
+        universeURL: 'DC-universe.png',
         teamName: 'Justice League',
         universeName: 'DC'
       }),
@@ -133,8 +133,8 @@ db.sync({ force: true })
         name: 'Bruce Wayne',
         email: 'brucewayne@justiceleague.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'JL-logo.png',
+        universeURL: 'DC-universe.png',
         teamName: 'Justice League',
         universeName: 'DC'
       }),
@@ -143,8 +143,8 @@ db.sync({ force: true })
         name: 'Diana Prince',
         email: 'dianaprince@justiceleague.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'JL-logo.png',
+        universeURL: 'DC-universe.png',
         teamName: 'Justice League',
         universeName: 'DC'
       }),
@@ -153,8 +153,8 @@ db.sync({ force: true })
         name: 'Harley Quinn',
         email: 'harleyquinn@suicidesquad.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'suicide-squad.png',
+        universeURL: 'DC-universe.png',
         teamName: 'Suicide Squad',
         universeName: 'DC'
       }),
@@ -163,8 +163,8 @@ db.sync({ force: true })
         name: 'Deadshot',
         email: 'deadshot@suicidesquad.com',
         imageURL: 'defaulthero.jpg',
-        teamURL: 'defaultteam.jpg',
-        universeURL: 'defaultuniverse.png',
+        teamURL: 'suicide-squad.png',
+        universeURL: 'DC-universe.png',
         teamName: 'Suicide Squad',
         universeName: 'DC'
       })
@@ -174,11 +174,11 @@ db.sync({ force: true })
     return Promise.all([
       Universe.create({
         universeName: 'Marvel',
-        universeURL: 'defaultuniverse.png'
+        universeURL: 'marveluniverse.png'
       }),
       Universe.create({
         universeName: 'DC',
-        universeURL: 'defaultuniverse.png'
+        universeURL: 'DC-universe.png'
       })
     ]);
   })

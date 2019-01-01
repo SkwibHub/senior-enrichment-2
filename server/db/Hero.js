@@ -22,17 +22,17 @@ const Hero = db.define('hero', {
   imageURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    imageURL: 'defaulthero.jpg'
+    imageURL: 'unaffiliated.png'
   },
   teamURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    imageURL: 'defaultteam.jpg'
+    imageURL: 'unaffiliated.png'
   },
   universeURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    imageURL: 'defaultuniverse.jpg'
+    imageURL: 'unaffiliated.png'
   },
   teamName: {
     type: Sequelize.STRING,

@@ -22,7 +22,7 @@ class TeamComponent extends Component {
           {this.props.team.map((team, index) => (
             <div className='teamContainer'>
               <div>
-                <img src={`images/${team.teamURL}`} className='teamLogo' />
+                <img src={`images/${team.teamURL}`} className='bigLogo' />
               </div>
               <div>
                 <Link to={`/team/${team.id}`} key={index}>
@@ -30,7 +30,7 @@ class TeamComponent extends Component {
                 </Link>
               </div>
               <div>
-                <img src={`images/${team.universeURL}`} className='teamLogo' />
+                <img src={`images/${team.universeURL}`} className='smallLogo' />
               </div>
             </div>
           ))}

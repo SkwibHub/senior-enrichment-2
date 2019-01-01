@@ -1,19 +1,15 @@
-/*
- * Hi! I'm your stylesheet! I've got some sensible defaults here,
- * but feel free to change me to your heart's content!
- */
-
 * {
   box-sizing: border-box;
   font-family: arial, sans-serif;
 }
 
-body {
-  background: linear-gradient(#ffffff, #c0c0c0);
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
+html {
+  background: url(images/background-template.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 nav {
@@ -48,6 +44,7 @@ main {
   padding: 5px;
   margin: 5px;
   width: 18vw;
+  height: 50vh;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
@@ -56,6 +53,10 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.teamLogo {
+.bigLogo {
+  width: 15vw;
+}
+
+.smallLogo {
   width: 5vw;
 }
