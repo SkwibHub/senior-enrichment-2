@@ -10,7 +10,7 @@ const Universe = db.define('universe', {
   universeURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: 'defaultuniverse.jpg'
+    defaultValue: 'defaultuniverse.png'
   }
 });
 

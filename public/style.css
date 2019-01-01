@@ -31,3 +31,31 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
+.teamComponent {
+  width: 65%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  text-align: left;
+  float: left;
+}
+
+.teamContainer {
+  border: 1px black solid;
+  border-radius: 4px;
+  background-color: antiquewhite;
+  padding: 5px;
+  margin: 5px;
+  width: 18vw;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  text-align: center;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.teamLogo {
+  width: 5vw;
+}

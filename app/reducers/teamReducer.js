@@ -9,6 +9,15 @@ const getTeamList = teamList => ({
   teamList
 });
 
+// thunk creators
+export const teamThunk = () => {
+  return async dispatch => {
+    const response = await axios.get('/api/team');
+    const action = getTeamList(response.data);
+    dispatch(action);
+  };
+};
+
 // reducer
 const initialState = [];
 
