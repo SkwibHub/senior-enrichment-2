@@ -165,6 +165,7 @@ hr {
 
 .bigLogo {
   width: 15vw;
+  max-height: 32vh;
 }
 
 .smallLogo {
