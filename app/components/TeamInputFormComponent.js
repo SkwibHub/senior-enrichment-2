@@ -17,6 +17,7 @@ class TeamInputFormComponent extends Component {
   async componentDidMount() {
     await this.props.retrieveUniverseData();
     this.setState({ loading: false });
+    console.log('NEW MOUNT', this.state);
   }
 
   URLassign(team, universe) {
@@ -51,16 +52,20 @@ class TeamInputFormComponent extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <div className="superhero-header" />;
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <br />
         <label>
-          <span className='labelClass'>Team Name:</span>
+          <span className="labelClass">Team Name:</span>
           <br />
           <input
-            type='text'
-            name='teamName'
-            className='formField'
+            type="text"
+            name="teamName"
+            className="formField"
             onChange={this.handleChange}
             value={this.state.teamName}
           />
@@ -68,12 +73,12 @@ class TeamInputFormComponent extends Component {
         <br />
         <br />
         <label>
-          <span className='labelClass'>Team Image URL:</span>
+          <span className="labelClass">Team Image URL:</span>
           <br />
           <input
-            type='text'
-            name='teamURL'
-            className='formField'
+            type="text"
+            name="teamURL"
+            className="formField"
             onChange={this.handleChange}
             value={this.state.teamURL}
           />
@@ -81,18 +86,18 @@ class TeamInputFormComponent extends Component {
         <br />
         <br />
         <label>
-          <span className='labelClass'>Universe:</span>
+          <span className="labelClass">Universe:</span>
           <br />
           <select
-            type='text'
-            name='universeName'
-            className='formField'
+            type="text"
+            name="universeName"
+            className="formField"
             onChange={this.handleChange}
             value={this.state.universeName}
             required
-            aria-required='true'
+            aria-required="true"
           >
-            <option value=''>Select a Universe</option>
+            <option value="">Select a Universe</option>
             {this.props.universe.map(u => (
               <option key={u.id} value={u.universeName}>
                 {u.universeName}
@@ -102,7 +107,7 @@ class TeamInputFormComponent extends Component {
         </label>
         <br />
         <br />
-        <button type='submit'>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     );
   }

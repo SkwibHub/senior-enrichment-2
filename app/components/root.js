@@ -3,6 +3,10 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import Team from './Team.js';
 import SingleTeam from './SingleTeam.js';
+//import Hero from './Hero.js';
+//import SingleHero from './SingleHero.js';
+import Universe from './Universe.js';
+import SingleUniverse from './SingleUniverse.js';
 
 const Root = () => {
   return (
@@ -11,14 +15,16 @@ const Root = () => {
         <Navbar />
       </nav>
       <main>
-        <h1 className='superhero-subheader'>
-          Welcome to a world of super heroes!!
+        <h1 className="superhero-subheader">
+          Welcome to a world of wacky shit!!
         </h1>
         <Switch>
-          <Route exact path='/' component={Team} />
-          <Route exact path='/team' component={Team} />
-          <Route exact path='/team/:id' component={SingleTeam} />
-          <Redirect to='/' component={Team} />
+          <Route exact path="/" component={Team} />
+          <Route exact path="/team" component={Team} />
+          <Route exact path="/team/:id" component={SingleTeam} />
+          <Route exact path="/universe" component={Universe} />
+          <Route exact path="/universe/:id" component={SingleUniverse} />
+          <Redirect to="/" component={Team} />
         </Switch>
       </main>
     </div>
