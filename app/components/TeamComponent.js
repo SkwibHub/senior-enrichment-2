@@ -16,6 +16,10 @@ class TeamComponent extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <div className='superhero-header'>LOADING....</div>;
+    }
+
     return (
       <div>
         <div className='teamComponent'>

@@ -17,8 +17,6 @@ class TeamInputFormComponent extends Component {
   async componentDidMount() {
     await this.props.retrieveUniverseData();
     this.setState({ loading: false });
-    console.log('PROPS UNIVERSE', this.props.universe); //------------
-    console.log('PROPS UNIVERSE', this.props.universe[0].universeName); //-------------
   }
 
   URLassign(team, universe) {

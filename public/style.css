@@ -122,9 +122,30 @@ hr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
+.singleTeamContainer {
+  border: 2px rgb(250, 248, 248) solid;
+  border-radius: 8px;
+  background-color: rgba(243, 237, 237, 0.6);
+  padding: 5px;
+  margin: 5px;
+  width: 51vw;
+  height: 50vh;
+  vertical-align: top;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
 .teamLinkName {
   text-decoration: none;
   font: 3vh 'Changa One';
+}
+
+.singleTeamName {
+  text-decoration: none;
+  font: 5vh 'Changa One';
+  margin: 0px;
+  padding: 0px;
 }
 
 .component-header {
@@ -173,4 +194,37 @@ hr {
 
 .formImage {
   width: 30vw;
+}
+
+.noListingHere {
+  color: #fff;
+  font: 4vh 'Changa One';
+  text-shadow: 2px 2px 2px #000000;
+  margin: 1px;
+  text-align: center;
+}
+
+.smallHeroContainer {
+  border: 1px black solid;
+  border-radius: 8px;
+  background-color: antiquewhite;
+  padding: 5px;
+  margin: 5px;
+  width: 11vw;
+  height: 25vh;
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.smallHeroLinkName {
+  text-decoration: none;
+  font: 3vh 'Changa One';
+}
+
+.smallHeroImage {
+  width: 6vw;
+  margin-top: 1vh;
 }

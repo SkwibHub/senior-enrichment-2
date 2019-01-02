@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import Team from './Team.js';
+import SingleTeam from './SingleTeam.js';
 
 const Root = () => {
   return (
@@ -16,6 +17,7 @@ const Root = () => {
         <Switch>
           <Route exact path='/' component={Team} />
           <Route exact path='/team' component={Team} />
+          <Route exact path='/team/:id' component={SingleTeam} />
           <Redirect to='/' component={Team} />
         </Switch>
       </main>
