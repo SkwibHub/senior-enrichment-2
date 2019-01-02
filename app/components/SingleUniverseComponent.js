@@ -17,11 +17,10 @@ class SingleUniverseComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
     const heroes = this.props.universe.heroKey;
-    const team = this.props.universe.teamKey;
     const universe = this.props.universe.universeKey;
 
     return (
@@ -38,7 +37,7 @@ class SingleUniverseComponent extends Component {
         </div>
 
         <div className='formComponent'>
-          <h1 className='component-header'>UPDATE TEAM FORM</h1>
+          <h1 className='component-header'>UPDATE UNIVERSE</h1>
           <div>
             <SingleUniverseUpdateFormComponent
               universe={this.props.universe}

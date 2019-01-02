@@ -23,7 +23,6 @@ class SingleHeroUpdateFormComponent extends Component {
     await this.props.retrieveTeamData();
     await this.props.retrieveUniverseData();
     this.setState({ loading: false });
-    console.log('PROPS', this.props);
   }
 
   URLassign(hero, universe, team) {

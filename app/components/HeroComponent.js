@@ -26,6 +26,33 @@ class HeroComponent extends Component {
       return <div className='superhero-header' />;
     }
 
+    if (this.props.hero.length < 1) {
+      return (
+        <div>
+          <div className='teamComponent'>
+            <br />
+            <br />
+            <h2 className='noListingHere'>No heroes in this database.</h2>
+          </div>
+          <div className='formComponent'>
+            <h1 className='component-header'>NEW HERO FORM</h1>
+            <div>
+              <HeroInputFormComponent
+                insertHeroData={this.props.insertHeroData}
+                retrieveTeamData={this.props.retrieveTeamData}
+                retrieveUniverseData={this.props.retrieveUniverseData}
+                universe={this.props.universe}
+                team={this.props.team}
+              />
+            </div>
+            <div>
+              <img src='images/unaffiliated.png' className='formImage' />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className='teamComponent'>

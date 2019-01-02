@@ -19,12 +19,36 @@ class UniverseComponent extends Component {
   async handleSubmit(id) {
     event.preventDefault();
     await this.props.removeUniverseData(id);
-    console.log('DELETING');
   }
 
   render() {
     if (this.state.loading) {
       return <div className='superhero-header' />;
+    }
+
+    if (this.props.universe.length < 1) {
+      return (
+        <div>
+          <div className='teamComponent'>
+            <br />
+            <br />
+            <h2 className='noListingHere'>No universes in this database.</h2>
+          </div>
+          <div className='formComponent'>
+            <h1 className='component-header'>NEW UNIVERSE FORM</h1>
+            <div>
+              <UniverseInputFormComponent
+                insertUniverseData={this.props.insertUniverseData}
+                retrieveUniverseData={this.props.retrieveUniverseData}
+                universe={this.props.universe}
+              />
+            </div>
+            <div>
+              <img src='images/unaffiliated.png' className='formImage' />
+            </div>
+          </div>
+        </div>
+      );
     }
 
     return (
