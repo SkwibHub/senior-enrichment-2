@@ -23,7 +23,6 @@ class HeroInputFormComponent extends Component {
     await this.props.retrieveTeamData();
     await this.props.retrieveUniverseData();
     this.setState({ loading: false });
-    console.log('NEW MOUNT', this.state);
   }
 
   URLassign(hero, universe, team) {

@@ -19,12 +19,11 @@ class TeamComponent extends Component {
   async handleSubmit(id) {
     event.preventDefault();
     await this.props.removeTeamData(id);
-    console.log('DELETING');
   }
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
     return (
@@ -35,11 +34,13 @@ class TeamComponent extends Component {
           {this.props.team.map(t => (
             <div className='teamContainer' key={'div' + t.id}>
               <div>
-                <img
-                  src={`images/${t.teamURL}`}
-                  key={'teamimage' + t.id}
-                  className='bigLogo'
-                />
+                <Link to={`/team/${t.id}`} key={'logoname' + t.id}>
+                  <img
+                    src={`images/${t.teamURL}`}
+                    key={'teamimage' + t.id}
+                    className='bigLogo'
+                  />
+                </Link>
               </div>
               <div>
                 <Link
@@ -51,11 +52,13 @@ class TeamComponent extends Component {
                 </Link>
               </div>
               <div>
-                <img
-                  src={`images/${t.universeURL}`}
-                  key={'img' + t.id}
-                  className='smallLogo'
-                />
+                <Link to={`/universe/`}>
+                  <img
+                    src={`images/${t.universeURL}`}
+                    key={'img' + t.id}
+                    className='smallLogo'
+                  />
+                </Link>
               </div>
               <div>
                 <button

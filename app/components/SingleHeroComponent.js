@@ -11,23 +11,16 @@ class SingleHeroComponent extends Component {
   }
 
   async componentDidMount() {
-    await this.props.retrieveSingleTeamData(this.props.location.pathname);
+    await this.props.retrieveSingleHeroData(this.props.location.pathname);
     this.setState({ loading: false });
   }
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
-    const heroes = this.props.team.heroKey;
-    const team = this.props.team.teamKey;
-    const universe = this.props.team.universeKey[0];
-
-    console.log('Render team here.');
-    console.log('TEAM', team);
-    console.log('HERO', heroes);
-    console.log('UNIVERSE', universe);
+    const hero = this.props.hero.heroKey;
 
     return (
       <div>
@@ -36,11 +29,22 @@ class SingleHeroComponent extends Component {
           <h1 className='component-header'>TEAM ROSTER</h1>
           <br />
           <div className='singleTeamContainer'>
-            <img className='bigLogo' src={`/images/${team.teamURL}`} />
-            <h4 className='singleTeamName'>{team.teamName}</h4>
-            <img className='smallLogo' src={`/images/${team.universeURL}`} />
+            <img className='bigLogo' src={`/images/${hero.imageURL}`} />
+            <h4 className='singleTeamName'>{hero.alias}</h4>
+            <h4 className='singleTeamNameSmaller'>{hero.name}</h4>
+            <h4 className='singleTeamNameSmaller'>{hero.email}</h4>
+            <div className='smallHeroDiv'>
+              <Link to={`/team/`}>
+                <img src={`images/${hero.teamURL}`} className='smallHeroLogo' />
+              </Link>
+              <Link to={`/universe/`}>
+                <img
+                  src={`images/${hero.universeURL}`}
+                  className='smallHeroLogo'
+                />
+              </Link>
+            </div>
           </div>
-          {mapHeroes(heroes)}
         </div>
 
         {/*START OF CHANGE TO UPDATER COMPONENT*/}
@@ -50,8 +54,9 @@ class SingleHeroComponent extends Component {
             <SingleHeroUpdateFormComponent
               insertTeamData={this.props.insertTeamData}
               retrieveUniverseData={this.props.retrieveUniverseData}
+              retrieveTeamData={this.props.retrieveTeamData}
               universe={this.props.universe}
-              team={team}
+              team={this.props.team}
             />
           </div>
           <div>
@@ -63,41 +68,5 @@ class SingleHeroComponent extends Component {
     );
   }
 }
-
-const mapHeroes = heroes => {
-  if (heroes.length < 1) {
-    return (
-      <div>
-        <h2 className='noListingHere'>No heroes on this team's roster.</h2>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        {heroes.map((h, index) => (
-          <div className='smallHeroContainer'>
-            <div>
-              <div>
-                <img
-                  src={`images/unaffiliated.png`}
-                  className='smallHeroImage'
-                />
-              </div>
-              <div>
-                <Link
-                  to={'/hero/' + h.id}
-                  key={index}
-                  className='smallHeroLinkName'
-                >
-                  {h.alias}
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-};
 
 export default SingleHeroComponent;

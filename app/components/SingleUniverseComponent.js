@@ -24,11 +24,6 @@ class SingleUniverseComponent extends Component {
     const team = this.props.universe.teamKey;
     const universe = this.props.universe.universeKey;
 
-    console.log('Render team here.');
-    console.log('TEAM', team);
-    console.log('HERO', heroes);
-    console.log('UNIVERSE', universe);
-
     return (
       <div>
         <div className='teamComponent'>
@@ -68,16 +63,21 @@ const mapHeroes = heroes => {
   } else {
     return (
       <div>
-        {heroes.map((h, index) => (
-          <div className='smallHeroContainer'>
+        {heroes.map(h => (
+          <div className='smallHeroContainer' key={'herodiv' + h.id}>
             <div>
               <div>
-                <img src={`images/${h.imageURL}`} className='smallHeroImage' />
+                <Link to={'/hero/' + h.id} key={'heroimg' + h.id}>
+                  <img
+                    src={`images/${h.imageURL}`}
+                    className='smallHeroImage'
+                  />
+                </Link>
               </div>
               <div>
                 <Link
                   to={'/hero/' + h.id}
-                  key={index}
+                  key={'heroname' + h.id}
                   className='smallHeroLinkName'
                 >
                   {h.alias}

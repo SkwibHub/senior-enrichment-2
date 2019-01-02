@@ -24,7 +24,7 @@ class UniverseComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
     return (
@@ -35,11 +35,17 @@ class UniverseComponent extends Component {
           {this.props.universe.map(u => (
             <div className='teamContainer' key={'div' + u.id}>
               <div>
-                <img
-                  src={`images/${u.universeURL}`}
-                  key={'universeimage' + u.id}
-                  className='bigLogo'
-                />
+                <Link
+                  to={`/universe/${u.id}`}
+                  key={'name' + u.id}
+                  className='teamLinkName'
+                >
+                  <img
+                    src={`images/${u.universeURL}`}
+                    key={'universeimage' + u.id}
+                    className='bigLogo'
+                  />
+                </Link>
               </div>
               <div>
                 <Link

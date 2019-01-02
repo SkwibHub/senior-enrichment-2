@@ -17,17 +17,11 @@ class SingleTeamComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
     const heroes = this.props.team.heroKey;
     const team = this.props.team.teamKey;
-    const universe = this.props.team.universeKey[0];
-
-    console.log('Render team here.');
-    console.log('TEAM', team);
-    console.log('HERO', heroes);
-    console.log('UNIVERSE', universe);
 
     return (
       <div>
@@ -38,7 +32,9 @@ class SingleTeamComponent extends Component {
           <div className='singleTeamContainer'>
             <img className='bigLogo' src={`/images/${team.teamURL}`} />
             <h4 className='singleTeamName'>{team.teamName}</h4>
-            <img className='smallLogo' src={`/images/${team.universeURL}`} />
+            <Link to={`/universe/`}>
+              <img className='smallLogo' src={`/images/${team.universeURL}`} />
+            </Link>
           </div>
           {mapHeroes(heroes)}
         </div>
@@ -74,16 +70,21 @@ const mapHeroes = heroes => {
   } else {
     return (
       <div>
-        {heroes.map((h, index) => (
-          <div className='smallHeroContainer'>
+        {heroes.map(h => (
+          <div className='smallHeroContainer' key={'heroimg' + h.id}>
             <div>
               <div>
-                <img src={`images/${h.imageURL}`} className='smallHeroImage' />
+                <Link to={'/hero/' + h.id} key={'heroname' + h.id}>
+                  <img
+                    src={`images/${h.imageURL}`}
+                    className='smallHeroImage'
+                  />
+                </Link>
               </div>
               <div>
                 <Link
                   to={'/hero/' + h.id}
-                  key={index}
+                  key={'heroname' + h.id}
                   className='smallHeroLinkName'
                 >
                   {h.alias}

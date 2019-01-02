@@ -4,7 +4,7 @@ import Navbar from './Navbar.js';
 import Team from './Team.js';
 import SingleTeam from './SingleTeam.js';
 import Hero from './Hero.js';
-//import SingleHero from './SingleHero.js';
+import SingleHero from './SingleHero.js';
 import Universe from './Universe.js';
 import SingleUniverse from './SingleUniverse.js';
 
@@ -15,17 +15,18 @@ const Root = () => {
         <Navbar />
       </nav>
       <main>
-        <h1 className="superhero-subheader">
-          Welcome to a world of wacky shit!!
+        <h1 className='superhero-subheader'>
+          Your comic book character database!!
         </h1>
         <Switch>
-          <Route exact path="/" component={Team} />
-          <Route exact path="/team" component={Team} />
-          <Route exact path="/team/:id" component={SingleTeam} />
-          <Route exact path="/hero" component={Hero} />
-          <Route exact path="/universe" component={Universe} />
-          <Route exact path="/universe/:id" component={SingleUniverse} />
-          <Redirect to="/" component={Team} />
+          <Route exact path='/' component={Hero} />
+          <Route exact path='/team' component={Team} />
+          <Route exact path='/team/:id' component={SingleTeam} />
+          <Route exact path='/hero' component={Hero} />
+          <Route exact path='/hero/:id' component={SingleHero} />
+          <Route exact path='/universe' component={Universe} />
+          <Route exact path='/universe/:id' component={SingleUniverse} />
+          <Redirect to='/' component={Hero} />
         </Switch>
       </main>
     </div>

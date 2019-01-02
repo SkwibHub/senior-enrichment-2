@@ -38,13 +38,10 @@ router.get('/:id', async (req, res) => {
     });
 
     const sendHero = {
-      TeamKey: thisTeam,
-      HeroKey: thisHero,
+      teamKey: thisTeam,
+      heroKey: thisHero,
       universeKey: thisUniverse
     };
-
-    console.log(JSON.stringify(thisHero.teamName));
-    console.log(JSON.stringify(sendHero));
 
     res.json(sendHero);
   } catch (err) {
