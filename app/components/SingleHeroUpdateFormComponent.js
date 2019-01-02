@@ -4,14 +4,14 @@ class SingleHeroUpdateFormComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      alias: '',
-      name: '',
-      email: '',
-      imageURL: '',
+      alias: this.props.hero.heroKey.alias,
+      name: this.props.hero.heroKey.name,
+      email: this.props.hero.heroKey.email,
+      imageURL: this.props.hero.heroKey.imageURL,
       teamURL: '',
       universeURL: '',
-      teamName: '',
-      universeName: '',
+      teamName: this.props.hero.heroKey.teamName,
+      universeName: this.props.hero.heroKey.universeName,
       loading: true
     };
 
@@ -23,7 +23,7 @@ class SingleHeroUpdateFormComponent extends Component {
     await this.props.retrieveTeamData();
     await this.props.retrieveUniverseData();
     this.setState({ loading: false });
-    console.log('NEW MOUNT', this.state);
+    console.log('PROPS', this.props);
   }
 
   URLassign(hero, universe, team) {

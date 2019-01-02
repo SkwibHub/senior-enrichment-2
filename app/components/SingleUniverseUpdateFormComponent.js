@@ -4,8 +4,8 @@ class SingleUniverseUpdateFormComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      universeName: '',
-      universeURL: '',
+      universeName: this.props.universe.universeKey.universeName,
+      universeURL: this.props.universe.universeKey.universeURL,
       loading: true
     };
     this.handleChange = this.handleChange.bind(this);
@@ -13,7 +13,6 @@ class SingleUniverseUpdateFormComponent extends Component {
   }
 
   async componentDidMount() {
-    //await this.props.retrieveUniverseData();
     this.setState({ loading: false });
   }
 
@@ -35,19 +34,19 @@ class SingleUniverseUpdateFormComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header" />;
+      return <div className='superhero-header' />;
     }
 
     return (
       <form onSubmit={this.handleSubmit}>
         <br />
         <label>
-          <span className="labelClass">Universe Name:</span>
+          <span className='labelClass'>Universe Name:</span>
           <br />
           <input
-            type="text"
-            name="universeName"
-            className="formField"
+            type='text'
+            name='universeName'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.universeName}
           />
@@ -55,12 +54,12 @@ class SingleUniverseUpdateFormComponent extends Component {
         <br />
         <br />
         <label>
-          <span className="labelClass">Universe Image URL:</span>
+          <span className='labelClass'>Universe Image URL:</span>
           <br />
           <input
-            type="text"
-            name="universeURL"
-            className="formField"
+            type='text'
+            name='universeURL'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.universeURL}
           />
@@ -68,7 +67,7 @@ class SingleUniverseUpdateFormComponent extends Component {
 
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     );
   }

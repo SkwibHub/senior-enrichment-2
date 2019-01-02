@@ -49,7 +49,7 @@ class SingleHeroComponent extends Component {
 
         {/*START OF CHANGE TO UPDATER COMPONENT*/}
         <div className='formComponent'>
-          <h1 className='component-header'>UPDATE TEAM FORM</h1>
+          <h1 className='component-header'>UPDATE HERO FORM</h1>
           <div>
             <SingleHeroUpdateFormComponent
               insertTeamData={this.props.insertTeamData}
@@ -57,6 +57,7 @@ class SingleHeroComponent extends Component {
               retrieveTeamData={this.props.retrieveTeamData}
               universe={this.props.universe}
               team={this.props.team}
+              hero={this.props.hero}
             />
           </div>
           <div>
