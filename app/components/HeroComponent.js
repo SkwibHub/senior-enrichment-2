@@ -27,6 +27,10 @@ class HeroComponent extends Component {
       return <div className="superhero-header">LOADING....</div>;
     }
 
+    console.log('TEAM', this.props.team);
+    console.log('UNIVERSE', this.props.universe);
+    console.log('PROPS', this.props);
+
     return (
       <div>
         <div className="teamComponent">
@@ -36,7 +40,7 @@ class HeroComponent extends Component {
             <div className="teamContainer">
               <div>
                 <img
-                  src={`images/${h.teamURL}`}
+                  src={`images/${h.imageURL}`}
                   key={'heroimage' + h.id}
                   className="bigLogo"
                 />
@@ -47,14 +51,19 @@ class HeroComponent extends Component {
                   key={'name' + h.id}
                   className="teamLinkName"
                 >
-                  {`  ${h.teamName}`}
+                  {`  ${h.alias}`}
                 </Link>
               </div>
-              <div>
+              <div className="smallHeroDiv">
+                <img
+                  src={`images/${h.teamURL}`}
+                  key={'imgTeam' + h.id}
+                  className="smallHeroLogo"
+                />
                 <img
                   src={`images/${h.universeURL}`}
-                  key={'img' + h.id}
-                  className="smallLogo"
+                  key={'imgTeam' + h.id}
+                  className="smallHeroLogo"
                 />
               </div>
               <div>
@@ -71,13 +80,14 @@ class HeroComponent extends Component {
           ))}
         </div>
         <div className="formComponent">
-          <h1 className="component-header">NEW TEAM FORM</h1>
+          <h1 className="component-header">NEW HERO FORM</h1>
           <div>
             <HeroInputFormComponent
               insertHeroData={this.props.insertHeroData}
               retrieveTeamData={this.props.retrieveTeamData}
               retrieveUniverseData={this.props.retrieveUniverseData}
               universe={this.props.universe}
+              team={this.props.team}
             />
           </div>
           <div>

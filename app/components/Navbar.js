@@ -7,7 +7,7 @@ const Navbar = props => {
       <Link to="/team" className="navButtonLeft">
         TEAMS
       </Link>
-      <Link to="/team" className="navButtonLeft">
+      <Link to="/hero" className="navButtonLeft">
         HEROES
       </Link>
       <span>

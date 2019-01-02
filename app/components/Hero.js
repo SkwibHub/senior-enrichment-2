@@ -3,21 +3,24 @@ import { connect } from 'react-redux';
 import HeroComponent from './HeroComponent';
 import HeroInputFormComponent from './HeroInputFormComponent';
 import {
-  HeroThunk,
+  heroThunk,
   addNewHeroThunk,
   removeHeroThunk
 } from '../reducers/heroReducer.js';
+import { teamThunk } from '../reducers/teamReducer.js';
 import { universeThunk } from '../reducers/universeReducer.js';
 
 const mapStateToProps = state => ({
   hero: state.hero,
+  team: state.team,
   universe: state.universe
 });
 
 const mapDispatchToProps = dispatch => ({
-  retrieveHeroData: () => dispatch(HeroThunk()),
+  retrieveHeroData: () => dispatch(heroThunk()),
+  retrieveTeamData: () => dispatch(teamThunk()),
   retrieveUniverseData: () => dispatch(universeThunk()),
-  insertHeroData: Hero => dispatch(addNewHeroThunk(Hero)),
+  insertHeroData: hero => dispatch(addNewHeroThunk(hero)),
   removeHeroData: id => dispatch(removeHeroThunk(id))
 });
 

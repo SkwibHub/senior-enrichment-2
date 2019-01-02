@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import Team from './Team.js';
 import SingleTeam from './SingleTeam.js';
-//import Hero from './Hero.js';
+import Hero from './Hero.js';
 //import SingleHero from './SingleHero.js';
 import Universe from './Universe.js';
 import SingleUniverse from './SingleUniverse.js';
@@ -22,6 +22,7 @@ const Root = () => {
           <Route exact path="/" component={Team} />
           <Route exact path="/team" component={Team} />
           <Route exact path="/team/:id" component={SingleTeam} />
+          <Route exact path="/hero" component={Hero} />
           <Route exact path="/universe" component={Universe} />
           <Route exact path="/universe/:id" component={SingleUniverse} />
           <Redirect to="/" component={Team} />

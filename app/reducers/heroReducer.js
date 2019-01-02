@@ -6,9 +6,9 @@ const GET_HERO_LIST = 'GET_HERO_LIST';
 const GET_SINGLE_HERO = 'GET_SINGLE_HERO';
 
 // action creators
-const getHeroList = teamHero => ({
+const getHeroList = heroList => ({
   type: GET_HERO_LIST,
-  teamHero
+  heroList
 });
 
 const getSingleHero = singleHero => ({
@@ -20,7 +20,7 @@ const getSingleHero = singleHero => ({
 export const heroThunk = () => {
   return async dispatch => {
     let tempResponse = await axios.get('/api/hero');
-    let response = listSorter(tempResponse.data, 'heroName');
+    let response = listSorter(tempResponse.data, 'alias');
     const action = getHeroList(response);
     dispatch(action);
   };

@@ -165,6 +165,20 @@ hr {
   margin-top: 1vh;
 }
 
+.smallHeroLogo {
+  width: 4vw;
+  margin-top: 1vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  vertical-align: center;
+}
+
+.smallHeroDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .formComponent {
   width: 33vw;
   margin-top: 1vh;

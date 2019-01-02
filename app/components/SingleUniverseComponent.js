@@ -62,7 +62,7 @@ const mapHeroes = heroes => {
   if (heroes.length < 1) {
     return (
       <div>
-        <h2 className="noListingHere">No heroes on this team's roster.</h2>
+        <h2 className="noListingHere">No heroes in this universe.</h2>
       </div>
     );
   } else {
