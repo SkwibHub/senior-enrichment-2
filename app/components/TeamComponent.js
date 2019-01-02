@@ -33,7 +33,7 @@ class TeamComponent extends Component {
           <br />
           <h1 className='component-header'>SUPER TEAMS</h1>
           {this.props.team.map(t => (
-            <div className='teamContainer'>
+            <div className='teamContainer' key={'div' + t.id}>
               <div>
                 <img
                   src={`images/${t.teamURL}`}

@@ -24,36 +24,36 @@ class UniverseComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header">LOADING....</div>;
+      return <div className='superhero-header'>LOADING....</div>;
     }
 
     return (
       <div>
-        <div className="teamComponent">
+        <div className='teamComponent'>
           <br />
-          <h1 className="component-header">UNIVERSES</h1>
+          <h1 className='component-header'>UNIVERSES</h1>
           {this.props.universe.map(u => (
-            <div className="teamContainer">
+            <div className='teamContainer' key={'div' + u.id}>
               <div>
                 <img
                   src={`images/${u.universeURL}`}
                   key={'universeimage' + u.id}
-                  className="bigLogo"
+                  className='bigLogo'
                 />
               </div>
               <div>
                 <Link
                   to={`/universe/${u.id}`}
                   key={'name' + u.id}
-                  className="teamLinkName"
+                  className='teamLinkName'
                 >
                   {`  ${u.universeName}`}
                 </Link>
               </div>
               <div>
                 <button
-                  type="submit"
-                  className="deleteButton"
+                  type='submit'
+                  className='deleteButton'
                   onClick={() => this.handleSubmit(u.id)}
                   value={u.id}
                 >
@@ -63,8 +63,8 @@ class UniverseComponent extends Component {
             </div>
           ))}
         </div>
-        <div className="formComponent">
-          <h1 className="component-header">NEW UNIVERSE FORM</h1>
+        <div className='formComponent'>
+          <h1 className='component-header'>NEW UNIVERSE FORM</h1>
           <div>
             <UniverseInputFormComponent
               insertUniverseData={this.props.insertUniverseData}
@@ -73,7 +73,7 @@ class UniverseComponent extends Component {
             />
           </div>
           <div>
-            <img src="images/unaffiliated.png" className="formImage" />
+            <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
       </div>

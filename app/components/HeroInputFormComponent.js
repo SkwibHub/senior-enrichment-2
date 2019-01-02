@@ -72,58 +72,64 @@ class HeroInputFormComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header" />;
+      return <div className='superhero-header' />;
     }
 
     return (
       <form onSubmit={this.handleSubmit}>
         <br />
         <label>
-          <span className="labelClass">Hero's Alias:</span>
+          <span className='labelClass'>*Hero's Alias:</span>
           <br />
           <input
-            type="text"
-            name="alias"
-            className="formField"
+            type='text'
+            name='alias'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.alias}
+            required
+            aria-required='true'
           />
         </label>
         <br />
         <br />
         <label>
-          <span className="labelClass">Hero's Real Name:</span>
+          <span className='labelClass'>*Hero's Real Name:</span>
           <br />
           <input
-            type="text"
-            name="name"
-            className="formField"
+            type='text'
+            name='name'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.name}
+            required
+            aria-required='true'
           />
         </label>
         <br />
         <br />
         <label>
-          <span className="labelClass">Hero's COntact Email:</span>
+          <span className='labelClass'>*Hero's Contact Email:</span>
           <br />
           <input
-            type="text"
-            name="email"
-            className="formField"
+            type='text'
+            name='email'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.email}
+            required
+            aria-required='true'
           />
         </label>
         <br />
         <br />
         <label>
-          <span className="labelClass">Hero Image URL:</span>
+          <span className='labelClass'>Hero Image URL:</span>
           <br />
           <input
-            type="text"
-            name="imageURL"
-            className="formField"
+            type='text'
+            name='imageURL'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.imageURL}
           />
@@ -131,18 +137,18 @@ class HeroInputFormComponent extends Component {
         <br />
         <br />
         <label>
-          <span className="labelClass">Team:</span>
+          <span className='labelClass'>Team:</span>
           <br />
           <select
-            type="text"
-            name="teamName"
-            className="formField"
+            type='text'
+            name='teamName'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.teamName}
             required
-            aria-required="true"
+            aria-required='true'
           >
-            <option value="">Select a Team</option>
+            <option value=''>Select a Team</option>
             {this.props.team.map(t => (
               <option key={t.id} value={t.teamName}>
                 {t.teamName}
@@ -153,18 +159,18 @@ class HeroInputFormComponent extends Component {
         <br />
         <br />
         <label>
-          <span className="labelClass">Universe:</span>
+          <span className='labelClass'>Universe:</span>
           <br />
           <select
-            type="text"
-            name="universeName"
-            className="formField"
+            type='text'
+            name='universeName'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.universeName}
             required
-            aria-required="true"
+            aria-required='true'
           >
-            <option value="">Select a Universe</option>
+            <option value=''>Select a Universe</option>
             {this.props.universe.map(u => (
               <option key={u.id} value={u.universeName}>
                 {u.universeName}
@@ -174,7 +180,7 @@ class HeroInputFormComponent extends Component {
         </label>
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     );
   }

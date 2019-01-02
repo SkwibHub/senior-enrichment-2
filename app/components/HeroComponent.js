@@ -24,7 +24,7 @@ class HeroComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header">LOADING....</div>;
+      return <div className='superhero-header'>LOADING....</div>;
     }
 
     console.log('TEAM', this.props.team);
@@ -33,45 +33,46 @@ class HeroComponent extends Component {
 
     return (
       <div>
-        <div className="teamComponent">
+        <div className='teamComponent'>
           <br />
-          <h1 className="component-header">SUPER HEROES</h1>
+          <h1 className='component-header'>SUPER HEROES</h1>
           {this.props.hero.map(h => (
-            <div className="teamContainer">
+            <div className='teamContainer' key={'div' + h.id}>
               <div>
                 <img
                   src={`images/${h.imageURL}`}
                   key={'heroimage' + h.id}
-                  className="bigLogo"
+                  className='bigLogo'
                 />
               </div>
               <div>
                 <Link
                   to={`/hero/${h.id}`}
                   key={'name' + h.id}
-                  className="teamLinkName"
+                  className='teamLinkName'
                 >
                   {`  ${h.alias}`}
                 </Link>
               </div>
-              <div className="smallHeroDiv">
+              <div className='smallHeroDiv'>
                 <img
                   src={`images/${h.teamURL}`}
                   key={'imgTeam' + h.id}
-                  className="smallHeroLogo"
+                  className='smallHeroLogo'
                 />
                 <img
                   src={`images/${h.universeURL}`}
-                  key={'imgTeam' + h.id}
-                  className="smallHeroLogo"
+                  key={'imgUniverse' + h.id}
+                  className='smallHeroLogo'
                 />
               </div>
               <div>
                 <button
-                  type="submit"
-                  className="deleteButton"
+                  type='submit'
+                  className='deleteButton'
                   onClick={() => this.handleSubmit(h.id)}
                   value={h.id}
+                  key={'button' + h.id}
                 >
                   DELETE
                 </button>
@@ -79,8 +80,8 @@ class HeroComponent extends Component {
             </div>
           ))}
         </div>
-        <div className="formComponent">
-          <h1 className="component-header">NEW HERO FORM</h1>
+        <div className='formComponent'>
+          <h1 className='component-header'>NEW HERO FORM</h1>
           <div>
             <HeroInputFormComponent
               insertHeroData={this.props.insertHeroData}
@@ -91,7 +92,7 @@ class HeroComponent extends Component {
             />
           </div>
           <div>
-            <img src="images/unaffiliated.png" className="formImage" />
+            <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
       </div>

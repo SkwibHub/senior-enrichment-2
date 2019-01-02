@@ -25,6 +25,9 @@ class UniverseInputFormComponent extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+    if (this.state.universeURL === '') {
+      this.state.universeURL = 'unaffiliated.png';
+    }
     await this.props.insertUniverseData(this.state);
 
     this.setState({
@@ -35,32 +38,34 @@ class UniverseInputFormComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header" />;
+      return <div className='superhero-header' />;
     }
 
     return (
       <form onSubmit={this.handleSubmit}>
         <br />
         <label>
-          <span className="labelClass">Universe Name:</span>
+          <span className='labelClass'>*Universe Name:</span>
           <br />
           <input
-            type="text"
-            name="universeName"
-            className="formField"
+            type='text'
+            name='universeName'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.universeName}
+            required
+            aria-required='true'
           />
         </label>
         <br />
         <br />
         <label>
-          <span className="labelClass">Universe Image URL:</span>
+          <span className='labelClass'>Universe Image URL:</span>
           <br />
           <input
-            type="text"
-            name="universeURL"
-            className="formField"
+            type='text'
+            name='universeURL'
+            className='formField'
             onChange={this.handleChange}
             value={this.state.universeURL}
           />
@@ -68,7 +73,7 @@ class UniverseInputFormComponent extends Component {
 
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     );
   }
