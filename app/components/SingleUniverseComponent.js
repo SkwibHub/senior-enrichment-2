@@ -17,7 +17,7 @@ class SingleUniverseComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="superhero-header">LOADING....</div>;
+      return <div className='superhero-header'>LOADING....</div>;
     }
 
     const heroes = this.props.universe.heroKey;
@@ -31,25 +31,25 @@ class SingleUniverseComponent extends Component {
 
     return (
       <div>
-        <div className="teamComponent">
+        <div className='teamComponent'>
           <br />
-          <h1 className="component-header">HEROES IN THIS UNIVERSE</h1>
+          <h1 className='component-header'>HEROES IN THIS UNIVERSE</h1>
           <br />
-          <div className="singleTeamContainer">
-            <img className="bigLogo" src={`/images/${universe.universeURL}`} />
-            <h4 className="singleTeamName">{universe.universeName}</h4>
+          <div className='singleTeamContainer'>
+            <img className='bigLogo' src={`/images/${universe.universeURL}`} />
+            <h4 className='singleTeamName'>{universe.universeName}</h4>
           </div>
           {mapHeroes(heroes)}
         </div>
 
         {/*START OF CHANGE TO UPDATER COMPONENT*/}
-        <div className="formComponent">
-          <h1 className="component-header">UPDATE TEAM FORM</h1>
+        <div className='formComponent'>
+          <h1 className='component-header'>UPDATE TEAM FORM</h1>
           <div>
             <SingleUniverseUpdateFormComponent universe={this.props.universe} />
           </div>
           <div>
-            <img src="images/unaffiliated.png" className="formImage" />
+            <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
         {/*END OF CHANGE TO UPDATER COMPONENT*/}
@@ -62,26 +62,23 @@ const mapHeroes = heroes => {
   if (heroes.length < 1) {
     return (
       <div>
-        <h2 className="noListingHere">No heroes in this universe.</h2>
+        <h2 className='noListingHere'>No heroes in this universe.</h2>
       </div>
     );
   } else {
     return (
       <div>
         {heroes.map((h, index) => (
-          <div className="smallHeroContainer">
+          <div className='smallHeroContainer'>
             <div>
               <div>
-                <img
-                  src={`images/unaffiliated.png`}
-                  className="smallHeroImage"
-                />
+                <img src={`images/${h.imageURL}`} className='smallHeroImage' />
               </div>
               <div>
                 <Link
                   to={'/hero/' + h.id}
                   key={index}
-                  className="smallHeroLinkName"
+                  className='smallHeroLinkName'
                 >
                   {h.alias}
                 </Link>

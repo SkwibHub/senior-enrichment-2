@@ -78,10 +78,7 @@ const mapHeroes = heroes => {
           <div className='smallHeroContainer'>
             <div>
               <div>
-                <img
-                  src={`images/unaffiliated.png`}
-                  className='smallHeroImage'
-                />
+                <img src={`images/${h.imageURL}`} className='smallHeroImage' />
               </div>
               <div>
                 <Link
