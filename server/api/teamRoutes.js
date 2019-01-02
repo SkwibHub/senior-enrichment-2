@@ -64,6 +64,21 @@ router.post('/add', async (req, res) => {
   }
 });
 
+//POST: Delete team from the server.
+router.delete('/:id', async (req, res) => {
+  try {
+    await Team.destroy({
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Removed team ${req.params.id} data from DB`);
+    res.send('Team removed');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;

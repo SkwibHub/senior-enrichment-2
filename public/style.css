@@ -113,7 +113,7 @@ hr {
   padding: 5px;
   margin: 5px;
   width: 15vw;
-  height: 45vh;
+  height: 50vh;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
@@ -129,7 +129,6 @@ hr {
   padding: 5px;
   margin: 5px;
   width: 51vw;
-  height: 50vh;
   vertical-align: top;
   padding: 10px;
   text-align: center;
@@ -227,4 +226,21 @@ hr {
 .smallHeroImage {
   width: 6vw;
   margin-top: 1vh;
+}
+
+.deleteButton {
+  border: 1px solid #000;
+  background-color: #420909;
+  border-radius: 8px;
+  padding: 3px 3px 3px 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  font-family: 'Changa One', cursive;
+  color: rgb(248, 245, 245);
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vh;
+  display: inline-block;
+  vertical-align: center;
+  margin-top: 3vh;
 }

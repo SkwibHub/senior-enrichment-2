@@ -8,11 +8,18 @@ class TeamComponent extends Component {
     this.state = {
       loading: true
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async componentDidMount() {
     await this.props.retrieveTeamData();
     this.setState({ loading: false });
+  }
+
+  async handleSubmit(id) {
+    event.preventDefault();
+    await this.props.removeTeamData(id);
+    console.log('DELETING');
   }
 
   render() {
@@ -49,6 +56,16 @@ class TeamComponent extends Component {
                   key={'img' + t.id}
                   className='smallLogo'
                 />
+              </div>
+              <div>
+                <button
+                  type='submit'
+                  className='deleteButton'
+                  onClick={() => this.handleSubmit(t.id)}
+                  value={t.id}
+                >
+                  DELETE
+                </button>
               </div>
             </div>
           ))}

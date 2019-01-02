@@ -2,7 +2,11 @@ import { connect } from 'react-redux';
 
 import TeamComponent from './TeamComponent';
 import TeamInputFormComponent from './TeamInputFormComponent';
-import { teamThunk, addNewTeamThunk } from '../reducers/teamReducer.js';
+import {
+  teamThunk,
+  addNewTeamThunk,
+  removeTeamThunk
+} from '../reducers/teamReducer.js';
 import { universeThunk } from '../reducers/universeReducer.js';
 
 const mapStateToProps = state => ({
@@ -13,7 +17,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   retrieveTeamData: () => dispatch(teamThunk()),
   retrieveUniverseData: () => dispatch(universeThunk()),
-  insertTeamData: team => dispatch(addNewTeamThunk(team))
+  insertTeamData: team => dispatch(addNewTeamThunk(team)),
+  removeTeamData: id => dispatch(removeTeamThunk(id))
 });
 
 const Team = connect(

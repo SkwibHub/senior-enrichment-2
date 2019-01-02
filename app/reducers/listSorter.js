@@ -1,15 +1,15 @@
-const listSorter = (listArray, key) => {
-  for (let i = 0; i < listArray.length - 1; i++) {
-    for (let j = i; j < listArray.length - 1; j++) {
-      if (listArray[j][key] > listArray[j + 1][key]) {
-        let temp = listArray[j];
-        listArray[j] = listArray[j + 1];
-        listArray[j + 1] = temp;
+const listSorter = (ListArray, key) => {
+  let newListArray = ListArray.slice();
+  for (let i = 0; i < newListArray.length - 1; i++) {
+    for (let j = 0; j < newListArray.length - 1; j++) {
+      if (newListArray[j][key] > newListArray[j + 1][key]) {
+        let temp = newListArray[j];
+        newListArray[j] = newListArray[j + 1];
+        newListArray[j + 1] = temp;
       }
     }
   }
-  console.log('List sorting');
-  return listArray;
+  return newListArray;
 };
 
 module.exports = listSorter;

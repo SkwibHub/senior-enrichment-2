@@ -4,8 +4,7 @@ const Sequelize = require('sequelize');
 const Team = db.define('team', {
   teamName: {
     type: Sequelize.STRING,
-    allowNull: false,
-    defaultValue: ''
+    allowNull: false
   },
   teamURL: {
     type: Sequelize.STRING,

@@ -28,18 +28,29 @@ export const teamThunk = () => {
 
 export const singleTeamThunk = id => {
   return async dispatch => {
-    console.log('THUNK ID', id);
-    const response = await axios.get(`/api${id}`);
-    console.log('THUNK DATA', response.data);
-    const action = getSingleTeam(response.data);
+    const tempResponse = await axios.get(`/api${id}`);
+    let sortedRoster = listSorter(tempResponse.data.heroKey, 'alias');
+    let response = Object.assign({}, tempResponse.data, {
+      heroKey: sortedRoster
+    });
+    const action = getSingleTeam(response);
     dispatch(action);
   };
 };
 
 export const addNewTeamThunk = team => {
   return async dispatch => {
-    console.log('DURING THUNK', team);
     await axios.post(`api/team/add`, team);
+    let tempResponse = await axios.get('/api/team');
+    let response = listSorter(tempResponse.data, 'teamName');
+    const action = getTeamList(response);
+    dispatch(action);
+  };
+};
+
+export const removeTeamThunk = id => {
+  return async dispatch => {
+    await axios.delete(`/api/team/${id}`);
     let tempResponse = await axios.get('/api/team');
     let response = listSorter(tempResponse.data, 'teamName');
     const action = getTeamList(response);

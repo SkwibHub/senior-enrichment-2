@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import SingleTeamComponent from './SingleTeamComponent';
-import TeamInputFormComponent from './TeamInputFormComponent'; //-----------
+import SingleTeamUpdateFormComponent from './SingleTeamUpdateFormComponent';
 import { singleTeamThunk } from '../reducers/teamReducer.js';
 import { universeThunk } from '../reducers/universeReducer.js';
 
@@ -18,6 +18,6 @@ const mapDispatchToProps = dispatch => ({
 const Team = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SingleTeamComponent, TeamInputFormComponent);
+)(SingleTeamComponent, SingleTeamUpdateFormComponent);
 
 export default Team;

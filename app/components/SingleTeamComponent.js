@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TeamInputFormComponent from './TeamInputFormComponent.js'; //----CHANGE TO UPDATER COMPONENT
+import SingleTeamUpdateFormComponent from './SingleTeamUpdateFormComponent.js';
 
 class SingleTeamComponent extends Component {
   constructor(props) {
@@ -45,12 +45,13 @@ class SingleTeamComponent extends Component {
 
         {/*START OF CHANGE TO UPDATER COMPONENT*/}
         <div className='formComponent'>
-          <h1 className='component-header'>NEW TEAM FORM</h1>
+          <h1 className='component-header'>UPDATE TEAM FORM</h1>
           <div>
-            <TeamInputFormComponent
+            <SingleTeamUpdateFormComponent
               insertTeamData={this.props.insertTeamData}
               retrieveUniverseData={this.props.retrieveUniverseData}
               universe={this.props.universe}
+              team={team}
             />
           </div>
           <div>
