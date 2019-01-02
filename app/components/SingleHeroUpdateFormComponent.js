@@ -56,17 +56,17 @@ class SingleHeroUpdateFormComponent extends Component {
       this.props.universe,
       this.props.team
     );
-    await this.props.insertHeroData(assignedState);
+    await this.props.updateHeroData(assignedState, this.props.hero.heroKey.id);
 
     this.setState({
-      alias: '',
-      name: '',
-      email: '',
-      imageURL: '',
+      alias: this.props.hero.heroKey.alias,
+      name: this.props.hero.heroKey.name,
+      email: this.props.hero.heroKey.email,
+      imageURL: this.props.hero.heroKey.imageURL,
       teamURL: '',
       universeURL: '',
-      teamName: '',
-      universeName: ''
+      teamName: this.props.hero.heroKey.teamName,
+      universeName: this.props.hero.heroKey.universeName
     });
   }
 

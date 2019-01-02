@@ -41,12 +41,12 @@ class SingleTeamUpdateFormComponent extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const assignedState = this.URLassign(this.state, this.props.universe);
-    await this.props.insertTeamData(assignedState);
+    await this.props.updateTeamData(assignedState, this.props.team.id);
 
     this.setState({
-      teamName: '',
-      teamURL: '',
-      universeName: ''
+      teamName: this.props.team.teamName,
+      teamURL: this.props.team.teamURL,
+      universeName: this.props.team.universeName
     });
   }
 

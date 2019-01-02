@@ -79,6 +79,21 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+//PUT: Update team on the server.
+router.put('/:id', async (req, res) => {
+  try {
+    await Team.update(req.body, {
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Updated team ${req.params.id} data from DB`);
+    res.send('Team updated');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;

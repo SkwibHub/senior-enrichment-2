@@ -2,7 +2,10 @@ import { connect } from 'react-redux';
 
 import SingleUniverseComponent from './SingleUniverseComponent';
 import SingleUniverseUpdateFormComponent from './SingleUniverseUpdateFormComponent';
-import { singleUniverseThunk } from '../reducers/universeReducer.js';
+import {
+  singleUniverseThunk,
+  updateUniverseThunk
+} from '../reducers/universeReducer.js';
 import { heroThunk } from '../reducers/heroReducer.js';
 
 const mapStateToProps = state => ({
@@ -12,7 +15,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   retrieveSingleUniverseData: id => dispatch(singleUniverseThunk(id)),
-  retrieveHeroData: () => dispatch(heroThunk())
+  retrieveHeroData: () => dispatch(heroThunk()),
+  updateUniverseData: (universe, id) =>
+    dispatch(updateUniverseThunk(universe, id))
 });
 
 const Universe = connect(

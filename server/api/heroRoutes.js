@@ -60,7 +60,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-//POST: Delete hero from the server.
+//DELETE: Delete hero from the server.
 router.delete('/:id', async (req, res) => {
   try {
     await Hero.destroy({
@@ -70,6 +70,21 @@ router.delete('/:id', async (req, res) => {
     });
     console.log(`Removed hero ${req.params.id} data from DB`);
     res.send('Hero removed');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+//PUT: Update hero on the server.
+router.put('/:id', async (req, res) => {
+  try {
+    await Hero.update(req.body, {
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Updated hero ${req.params.id} data from DB`);
+    res.send('Hero updated');
   } catch (err) {
     console.error(err);
   }

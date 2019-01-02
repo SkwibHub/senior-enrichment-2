@@ -58,6 +58,16 @@ export const removeUniverseThunk = id => {
   };
 };
 
+export const updateUniverseThunk = (universe, id) => {
+  return async dispatch => {
+    console.log('THUNK ID:', id);
+    await axios.put(`/api/universe/${id}`, universe);
+    const response = await axios.get(`/api/universe/${id}`);
+    const action = getSingleUniverse(response.data);
+    dispatch(action);
+  };
+};
+
 // reducer
 const initialState = [];
 

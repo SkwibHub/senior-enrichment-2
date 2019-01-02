@@ -58,6 +58,16 @@ export const removeTeamThunk = id => {
   };
 };
 
+export const updateTeamThunk = (team, id) => {
+  return async dispatch => {
+    console.log('THUNK ID:', id);
+    await axios.put(`/api/team/${id}`, team);
+    const response = await axios.get(`/api/team/${id}`);
+    const action = getSingleTeam(response.data);
+    dispatch(action);
+  };
+};
+
 // reducer
 const initialState = [];
 

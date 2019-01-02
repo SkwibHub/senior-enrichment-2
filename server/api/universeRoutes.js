@@ -79,6 +79,21 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+//PUT: Update universe on the server.
+router.put('/:id', async (req, res) => {
+  try {
+    await Universe.update(req.body, {
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Updated universe ${req.params.id} data from DB`);
+    res.send('Universe updated');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;

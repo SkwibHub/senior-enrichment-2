@@ -34,9 +34,9 @@ export const singleHeroThunk = id => {
   };
 };
 
-export const addNewHeroThunk = team => {
+export const addNewHeroThunk = hero => {
   return async dispatch => {
-    await axios.post(`api/hero/add`, team);
+    await axios.post(`api/hero/add`, hero);
     let tempResponse = await axios.get('/api/hero');
     let response = listSorter(tempResponse.data, 'alias');
     const action = getHeroList(response);
@@ -50,6 +50,15 @@ export const removeHeroThunk = id => {
     let tempResponse = await axios.get('/api/hero');
     let response = listSorter(tempResponse.data, 'alias');
     const action = getHeroList(response);
+    dispatch(action);
+  };
+};
+
+export const updateHeroThunk = (hero, id) => {
+  return async dispatch => {
+    await axios.put(`/api/hero/${id}`, hero);
+    const response = await axios.get(`/api/hero/${id}`);
+    const action = getSingleHero(response.data);
     dispatch(action);
   };
 };

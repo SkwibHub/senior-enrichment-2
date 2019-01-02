@@ -47,12 +47,11 @@ class SingleHeroComponent extends Component {
           </div>
         </div>
 
-        {/*START OF CHANGE TO UPDATER COMPONENT*/}
         <div className='formComponent'>
           <h1 className='component-header'>UPDATE HERO FORM</h1>
           <div>
             <SingleHeroUpdateFormComponent
-              insertTeamData={this.props.insertTeamData}
+              updateHeroData={this.props.updateHeroData}
               retrieveUniverseData={this.props.retrieveUniverseData}
               retrieveTeamData={this.props.retrieveTeamData}
               universe={this.props.universe}
@@ -64,7 +63,6 @@ class SingleHeroComponent extends Component {
             <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
-        {/*END OF CHANGE TO UPDATER COMPONENT*/}
       </div>
     );
   }

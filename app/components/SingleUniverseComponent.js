@@ -37,17 +37,18 @@ class SingleUniverseComponent extends Component {
           {mapHeroes(heroes)}
         </div>
 
-        {/*START OF CHANGE TO UPDATER COMPONENT*/}
         <div className='formComponent'>
           <h1 className='component-header'>UPDATE TEAM FORM</h1>
           <div>
-            <SingleUniverseUpdateFormComponent universe={this.props.universe} />
+            <SingleUniverseUpdateFormComponent
+              universe={this.props.universe}
+              updateUniverseData={this.props.updateUniverseData}
+            />
           </div>
           <div>
             <img src='images/unaffiliated.png' className='formImage' />
           </div>
         </div>
-        {/*END OF CHANGE TO UPDATER COMPONENT*/}
       </div>
     );
   }

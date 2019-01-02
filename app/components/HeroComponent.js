@@ -23,7 +23,7 @@ class HeroComponent extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className='superhero-header'>LOADING....</div>;
+      return <div className='superhero-header' />;
     }
 
     return (

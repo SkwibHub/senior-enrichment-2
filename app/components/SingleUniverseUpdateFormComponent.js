@@ -24,11 +24,14 @@ class SingleUniverseUpdateFormComponent extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await this.props.insertUniverseData(this.state);
+    await this.props.updateUniverseData(
+      this.state,
+      this.props.universe.universeKey.id
+    );
 
     this.setState({
-      universeName: '',
-      universeURL: ''
+      universeName: this.props.universe.universeKey.universeName,
+      universeURL: this.props.universe.universeKey.universeURL
     });
   }
 
