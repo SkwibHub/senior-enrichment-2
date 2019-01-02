@@ -53,6 +53,32 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//POST: Add a universe listing to DB
+router.post('/add', async (req, res) => {
+  try {
+    await Universe.create(req.body);
+    console.log('Adding universe data to DB');
+    res.send('New universe added');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+//POST: Delete universe from the server.
+router.delete('/:id', async (req, res) => {
+  try {
+    await Universe.destroy({
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Removed universe ${req.params.id} data from DB`);
+    res.send('Universe removed');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;

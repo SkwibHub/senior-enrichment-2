@@ -56,9 +56,9 @@ router.get('/:id', async (req, res) => {
 //POST: Add a team listing to DB
 router.post('/add', async (req, res) => {
   try {
-    const newTeam = await Team.create(req.body);
+    await Team.create(req.body);
     console.log('Adding team data to DB');
-    res.json({ message: 'New team added', article: newTeam });
+    res.send('New team added');
   } catch (err) {
     console.error(err);
   }

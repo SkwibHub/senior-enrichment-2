@@ -52,6 +52,32 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//POST: Add a hero listing to DB
+router.post('/add', async (req, res) => {
+  try {
+    await Hero.create(req.body);
+    console.log('Adding hero data to DB');
+    res.send('New hero added');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+//POST: Delete hero from the server.
+router.delete('/:id', async (req, res) => {
+  try {
+    await Hero.destroy({
+      where: {
+        id: parseInt(req.params.id)
+      }
+    });
+    console.log(`Removed hero ${req.params.id} data from DB`);
+    res.send('Hero removed');
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;
