@@ -11,7 +11,6 @@ const userNotFound = next => {
 };
 router.get('/me', (req, res, next) => {
   if (!req.session.userId) {
-    console.log('USER NOT FOUND');
     userNotFound(next);
   } else {
     User.findById(req.session.userId)
@@ -31,7 +30,6 @@ router.put('/login', async (req, res, next) => {
       console.log('USER EXISTS', req.session);
       if (user) {
         req.session.userId = user.id;
-        console.log('LOGGED IN PUT');
         res.json(user);
       } else {
         const err = new Error('Incorrect email or password!');

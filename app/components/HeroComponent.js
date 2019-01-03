@@ -27,8 +27,6 @@ class HeroComponent extends Component {
     }
 
     if (!this.props.user.user.id) {
-      console.log('USER SUBMISSION 1', this.props.user);
-      console.log('USER SUBMISSION 2', this.props.user.user.id);
       return <Redirect to='/' />;
     }
 
