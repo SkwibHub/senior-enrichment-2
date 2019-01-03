@@ -5,16 +5,26 @@ const LoginComponent = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <br />
         <div>
-          <label htmlFor='email'>Email</label>
-          <input type='email' name='email' />
+          <label htmlFor='email'>Email </label>
+          <input type='email' name='email' required aria-required='true' />
+        </div>
+        <br />
+        <div>
+          <label htmlFor='password'>Password </label>
+          <input
+            type='password'
+            name='password'
+            required
+            aria-required='true'
+          />
         </div>
         <div>
-          <label htmlFor='email'>Password</label>
-          <input type='password' name='password' />
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
+          <br />
+          <button type='submit' className='loginButton'>
+            Submit
+          </button>
         </div>
       </div>
     </form>

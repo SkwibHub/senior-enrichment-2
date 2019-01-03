@@ -8,10 +8,11 @@ const LoginPage = props => {
   const { handleSubmit } = props;
 
   return (
-    <div>
-      <h1>Let's Loggin'!</h1>
+    <div className='loginComponent'>
+      <h1 className='superhero-header'>SUPER HERO DATABASE</h1>
       <div>
-        <img src='/images/unaffiliated.png' className='bigLogo' />
+        <br />
+        <img src='/images/supergroup.png' className='loginMainPhoto' />
         <div>
           <LoginComponent handleSubmit={handleSubmit} />
           {/*<OauthLoginForm />*/}
