@@ -1,5 +1,5 @@
 const db = require('./server/db/database.js');
-const { Hero, Team, Universe } = require('./server/db/associations.js');
+const { Hero, Team, Universe, User } = require('./server/db/associations.js');
 
 const { green, red } = require('chalk');
 
@@ -179,6 +179,20 @@ db.sync({ force: true })
       Universe.create({
         universeName: 'DC',
         universeURL: 'DC-universe.png'
+      })
+    ]);
+  })
+  .then(() => {
+    return Promise.all([
+      User.create({
+        email: 'cody@email.com',
+        password: '12345',
+        imageUrl: 'unaffiliated.png'
+      }),
+      User.create({
+        email: 'superhero@email.com',
+        password: '12345',
+        imageUrl: 'unaffiliated.png'
       })
     ]);
   })

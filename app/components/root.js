@@ -19,14 +19,13 @@ const Root = () => {
           Your comic book character database!!
         </h1>
         <Switch>
-          <Route exact path='/' component={Hero} />
           <Route exact path='/team' component={Team} />
           <Route exact path='/team/:id' component={SingleTeam} />
           <Route exact path='/hero' component={Hero} />
           <Route exact path='/hero/:id' component={SingleHero} />
           <Route exact path='/universe' component={Universe} />
           <Route exact path='/universe/:id' component={SingleUniverse} />
-          <Redirect to='/' component={Hero} />
+          {/*<Redirect to='/' component={Hero} /> */}
         </Switch>
       </main>
     </div>

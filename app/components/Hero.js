@@ -13,7 +13,8 @@ import { universeThunk } from '../reducers/universeReducer.js';
 const mapStateToProps = state => ({
   hero: state.hero,
   team: state.team,
-  universe: state.universe
+  universe: state.universe,
+  user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({

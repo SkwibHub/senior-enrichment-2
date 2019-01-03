@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const volleyball = require('volleyball');
+const session = require('express-session');
 
 const app = express();
 
@@ -15,6 +16,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // static middleware
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Session middleware
+app.use(
+  session({
+    secret: 'SUPERHEROES',
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+// authentication router
+app.use('/auth', require('./auth'));
 
 app.use('/api/hero', require('./api/heroRoutes.js'));
 app.use('/api/team', require('./api/teamRoutes.js'));

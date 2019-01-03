@@ -5,6 +5,7 @@ const db = require('./database');
 const Team = require('./Team.js');
 const Hero = require('./Hero.js');
 const Universe = require('./Universe.js');
+const User = require('./User.js');
 
 Hero.belongsTo(Team);
 Hero.belongsTo(Universe);
@@ -19,5 +20,6 @@ module.exports = {
   db,
   Team,
   Hero,
-  Universe
+  Universe,
+  User
 };

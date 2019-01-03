@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import UniverseInputFormComponent from './UniverseInputFormComponent.js';
 
 class UniverseComponent extends Component {
@@ -24,6 +24,12 @@ class UniverseComponent extends Component {
   render() {
     if (this.state.loading) {
       return <div className='superhero-header' />;
+    }
+
+    if (!this.props.user.user.id) {
+      console.log('USER SUBMISSION 1', this.props.user);
+      console.log('USER SUBMISSION 2', this.props.user.user.id);
+      return <Redirect to='/' />;
     }
 
     if (this.props.universe.length < 1) {

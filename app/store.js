@@ -3,13 +3,15 @@ import axios from 'axios';
 import teamReducer from './reducers/teamReducer';
 import heroReducer from './reducers/heroReducer';
 import universeReducer from './reducers/universeReducer';
+import userReducer from './reducers/userReducer';
 import loggingMiddleware from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
 import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-thunk
 
 const rootReducer = combineReducers({
   team: teamReducer,
   hero: heroReducer,
-  universe: universeReducer
+  universe: universeReducer,
+  user: userReducer
 });
 
 export default createStore(

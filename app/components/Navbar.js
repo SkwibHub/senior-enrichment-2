@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../reducers/userReducer.js';
 
 const Navbar = props => {
+  const { handleClick } = props;
+
   return (
     <div>
       <Link to='/hero' className='navButtonLeft'>
@@ -16,11 +21,30 @@ const Navbar = props => {
       <Link to='/universe' className='navButtonRight'>
         UNIVERSES
       </Link>
-      <Link to='/team' className='navButtonRight'>
+      <Link to='/team' className='navButtonRight' onClick={handleClick}>
         LOGOUT
       </Link>
     </div>
   );
 };
 
-export default Navbar;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    handleClick() {
+      dispatch(logout()).then(() => {
+        ownProps.history.push('/');
+      });
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navbar);
