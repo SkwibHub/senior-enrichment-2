@@ -20,7 +20,7 @@ const Navbar = props => {
       <Link to='/universe' className='navButtonRight'>
         UNIVERSES
       </Link>
-      <Link to='/team' className='navButtonRight' onClick={handleClick}>
+      <Link to='/' className='navButtonRight' onClick={handleClick}>
         LOGOUT
       </Link>
     </div>

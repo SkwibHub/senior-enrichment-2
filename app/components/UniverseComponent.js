@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import UniverseInputFormComponent from './UniverseInputFormComponent.js';
+import Navbar from './Navbar.js';
 
 class UniverseComponent extends Component {
   constructor(props) {
@@ -33,22 +34,34 @@ class UniverseComponent extends Component {
     if (this.props.universe.length < 1) {
       return (
         <div>
-          <div className='teamComponent'>
-            <br />
-            <br />
-            <h2 className='noListingHere'>No universes in this database.</h2>
+          <div>
+            <nav>
+              <Navbar />
+            </nav>
           </div>
-          <div className='formComponent'>
-            <h1 className='component-header'>NEW UNIVERSE FORM</h1>
-            <div>
-              <UniverseInputFormComponent
-                insertUniverseData={this.props.insertUniverseData}
-                retrieveUniverseData={this.props.retrieveUniverseData}
-                universe={this.props.universe}
-              />
+          <div>
+            <h1 className='superhero-subheader'>
+              Your comic book character database!!
+            </h1>
+          </div>
+          <div>
+            <div className='teamComponent'>
+              <br />
+              <br />
+              <h2 className='noListingHere'>No universes in this database.</h2>
             </div>
-            <div>
-              <img src='images/unaffiliated.png' className='formImage' />
+            <div className='formComponent'>
+              <h1 className='component-header'>NEW UNIVERSE FORM</h1>
+              <div>
+                <UniverseInputFormComponent
+                  insertUniverseData={this.props.insertUniverseData}
+                  retrieveUniverseData={this.props.retrieveUniverseData}
+                  universe={this.props.universe}
+                />
+              </div>
+              <div>
+                <img src='images/unaffiliated.png' className='formImage' />
+              </div>
             </div>
           </div>
         </div>
@@ -57,6 +70,17 @@ class UniverseComponent extends Component {
 
     return (
       <div>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+        </div>
+        <div>
+          <h1 className='superhero-subheader'>
+            Your comic book character database!!
+          </h1>
+        </div>
+        <div />
         <div className='teamComponent'>
           <br />
           <h1 className='component-header'>UNIVERSES</h1>

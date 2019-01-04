@@ -20,8 +20,9 @@ const LoginComponent = props => {
             aria-required='true'
           />
         </div>
+
+        <br />
         <div>
-          <br />
           <button type='submit' className='loginButton'>
             Submit
           </button>

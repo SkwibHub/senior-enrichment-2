@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SingleHeroUpdateFormComponent from './SingleHeroUpdateFormComponent.js';
+import Navbar from './Navbar.js';
 
 class SingleHeroComponent extends Component {
   constructor(props) {
@@ -24,6 +25,17 @@ class SingleHeroComponent extends Component {
 
     return (
       <div>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+        </div>
+        <div>
+          <h1 className='superhero-subheader'>
+            Your comic book character database!!
+          </h1>
+        </div>
+        <div />
         <div className='teamComponent'>
           <br />
           <h1 className='component-header'>TEAM ROSTER</h1>

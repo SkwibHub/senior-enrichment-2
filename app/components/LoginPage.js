@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../reducers/userReducer.js';
 import LoginComponent from './LoginComponent';
-// import OauthLoginForm from './oauth-login-form'
+import OauthLoginComponent from './OauthLoginComponent.js';
 
 const LoginPage = props => {
   const { handleSubmit } = props;
@@ -15,7 +15,7 @@ const LoginPage = props => {
         <img src='/images/supergroup.png' className='loginMainPhoto' />
         <div>
           <LoginComponent handleSubmit={handleSubmit} />
-          {/*<OauthLoginForm />*/}
+          <OauthLoginComponent />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import HeroInputFormComponent from './HeroInputFormComponent.js';
+import Navbar from './Navbar.js';
 
 class HeroComponent extends Component {
   constructor(props) {
@@ -33,24 +34,36 @@ class HeroComponent extends Component {
     if (this.props.hero.length < 1) {
       return (
         <div>
-          <div className='teamComponent'>
-            <br />
-            <br />
-            <h2 className='noListingHere'>No heroes in this database.</h2>
+          <div>
+            <nav>
+              <Navbar />
+            </nav>
           </div>
-          <div className='formComponent'>
-            <h1 className='component-header'>NEW HERO FORM</h1>
-            <div>
-              <HeroInputFormComponent
-                insertHeroData={this.props.insertHeroData}
-                retrieveTeamData={this.props.retrieveTeamData}
-                retrieveUniverseData={this.props.retrieveUniverseData}
-                universe={this.props.universe}
-                team={this.props.team}
-              />
+          <div>
+            <h1 className='superhero-subheader'>
+              Your comic book character database!!
+            </h1>
+          </div>
+          <div>
+            <div className='teamComponent'>
+              <br />
+              <br />
+              <h2 className='noListingHere'>No heroes in this database.</h2>
             </div>
-            <div>
-              <img src='images/unaffiliated.png' className='formImage' />
+            <div className='formComponent'>
+              <h1 className='component-header'>NEW HERO FORM</h1>
+              <div>
+                <HeroInputFormComponent
+                  insertHeroData={this.props.insertHeroData}
+                  retrieveTeamData={this.props.retrieveTeamData}
+                  retrieveUniverseData={this.props.retrieveUniverseData}
+                  universe={this.props.universe}
+                  team={this.props.team}
+                />
+              </div>
+              <div>
+                <img src='images/unaffiliated.png' className='formImage' />
+              </div>
             </div>
           </div>
         </div>
@@ -59,6 +72,16 @@ class HeroComponent extends Component {
 
     return (
       <div>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+        </div>
+        <div>
+          <h1 className='superhero-subheader'>
+            Your comic book character database!!
+          </h1>
+        </div>
         <div className='teamComponent'>
           <br />
           <h1 className='component-header'>SUPER HEROES</h1>

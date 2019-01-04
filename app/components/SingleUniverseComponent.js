@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SingleUniverseUpdateFormComponent from './SingleUniverseUpdateFormComponent.js';
+import Navbar from './Navbar.js';
 
 class SingleUniverseComponent extends Component {
   constructor(props) {
@@ -25,6 +26,17 @@ class SingleUniverseComponent extends Component {
 
     return (
       <div>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+        </div>
+        <div>
+          <h1 className='superhero-subheader'>
+            Your comic book character database!!
+          </h1>
+        </div>
+        <div />
         <div className='teamComponent'>
           <br />
           <h1 className='component-header'>HEROES IN THIS UNIVERSE</h1>

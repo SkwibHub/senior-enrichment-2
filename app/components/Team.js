@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 
 import TeamComponent from './TeamComponent';
 import TeamInputFormComponent from './TeamInputFormComponent';
+import Navbar from './Navbar.js';
+
 import {
   teamThunk,
   addNewTeamThunk,

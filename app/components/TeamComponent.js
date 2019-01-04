@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import TeamInputFormComponent from './TeamInputFormComponent.js';
+import Navbar from './Navbar.js';
 
 class TeamComponent extends Component {
   constructor(props) {
@@ -33,22 +34,34 @@ class TeamComponent extends Component {
     if (this.props.team.length < 1) {
       return (
         <div>
-          <div className='teamComponent'>
-            <br />
-            <br />
-            <h2 className='noListingHere'>No teams in this database.</h2>
+          <div>
+            <nav>
+              <Navbar />
+            </nav>
           </div>
-          <div className='formComponent'>
-            <h1 className='component-header'>NEW TEAM FORM</h1>
-            <div>
-              <TeamInputFormComponent
-                insertTeamData={this.props.insertTeamData}
-                retrieveUniverseData={this.props.retrieveUniverseData}
-                universe={this.props.universe}
-              />
+          <div>
+            <h1 className='superhero-subheader'>
+              Your comic book character database!!
+            </h1>
+          </div>
+          <div>
+            <div className='teamComponent'>
+              <br />
+              <br />
+              <h2 className='noListingHere'>No teams in this database.</h2>
             </div>
-            <div>
-              <img src='images/unaffiliated.png' className='formImage' />
+            <div className='formComponent'>
+              <h1 className='component-header'>NEW TEAM FORM</h1>
+              <div>
+                <TeamInputFormComponent
+                  insertTeamData={this.props.insertTeamData}
+                  retrieveUniverseData={this.props.retrieveUniverseData}
+                  universe={this.props.universe}
+                />
+              </div>
+              <div>
+                <img src='images/unaffiliated.png' className='formImage' />
+              </div>
             </div>
           </div>
         </div>
@@ -57,6 +70,17 @@ class TeamComponent extends Component {
 
     return (
       <div>
+        <div>
+          <nav>
+            <Navbar />
+          </nav>
+        </div>
+        <div>
+          <h1 className='superhero-subheader'>
+            Your comic book character database!!
+          </h1>
+        </div>
+        <div />
         <div className='teamComponent'>
           <br />
           <h1 className='component-header'>SUPER TEAMS</h1>
